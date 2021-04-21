@@ -1,0 +1,268 @@
+:root {
+    --color-if-no-background: grey;
+    --link-color: #007bff;
+    --link-color-nav: black;
+    --link-hover-color-p-section: green;
+    --nav-background: white;
+    --main-text-color: white;
+    --button-color: #404040;
+    --hover-button-color: #202020;
+    /*dashboard colors*/
+    --not-yet-started: #505050;
+    --started: teal;
+    --complete: green;
+    --redo: red;
+}
+
+html {
+    background-color: var(--color-if-no-background);
+    background: url(images/DSC_0069\ \(1\).jpg) no-repeat center fixed;
+    background-size: cover;
+}
+
+html.grey {
+    background: url(#) no-repeat center fixed;
+    background-color: var(--color-if-no-background);
+}
+
+main { /*Alles onder de navbar*/
+    position: absolute;
+    top: 4rem;
+}
+/*
+@media screen and (min-width: 2300px) {
+    main {
+        display: flex;
+    }
+} */
+
+h1 {
+    font-size: 1.5em;
+}
+h3 {
+    font-size: 1.2em;
+}
+h4 {
+     font-size: 1em;
+ }
+
+a {
+    text-decoration: none;
+    color: var(--link-color);
+}
+
+p,li,td {
+    font-size: 0.9em;
+}
+
+a:hover {
+    color: var(--link-color);
+    text-decoration: underline;
+}
+
+td {
+    padding: 0 1rem;
+}
+
+img {
+    padding-right: 1rem;
+}
+
+hr {
+    border-top: 1px solid #505050;
+}
+
+nav { /*navbar*/
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    padding: 0.5rem 0rem 0.5rem 0rem;
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    background: var(--nav-background);
+    box-shadow: 0px 0px 1rem 1rem var(--nav-background);
+}
+
+nav a {
+    text-decoration: none;
+    font-family: 'Nunito', sans-serif;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: var(--link-color-nav);
+}
+
+#mobile-nav { /* hamburger knop */
+    visibility: hidden;
+    position: fixed;
+    top: 1.5rem;
+    right: 2rem;
+}
+
+.bar { /* 1 bar van mobile-nav */
+    width: 35px;
+    height: 5px;
+    background-color: black;
+    margin: 6px 0;
+}
+
+#mobile-close { /* kruisje mobiel */
+    visibility: hidden;
+    position: fixed;
+    top: .6rem;
+    right: 2rem;
+    font-size: 3.5em;
+    font-family: 'Nunito', sans-serif;
+    font-stretch: ultra-expanded;
+    z-index: 1;
+}
+
+#hamburger { /* navigatiebalk mobiel */
+    visibility: hidden;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    padding: 1rem;
+    background-color: var(--nav-background);
+    z-index: 1;
+    text-align: center;
+}
+
+#hamburger a {
+    text-decoration: none;
+    font-family: 'Nunito', sans-serif;
+    font-size: 1.3em;
+    font-weight: bold;
+    color: var(--link-color-nav);
+}
+
+@media screen and (max-width: 600px) {
+    nav {
+        visibility: hidden;
+    }
+    #mobile-nav {
+        visibility: visible;
+    }
+}
+
+section { /*doorzichtig tekstvak*/
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: .5rem;
+    color: var(--main-text-color);
+    padding: 1rem 2rem;
+    margin: 2rem;
+    font-family: 'Roboto Mono', monospace;
+    backdrop-filter: blur(10px);
+}
+
+section .icon img {
+    width: 3rem;
+    /*margin-top: .9rem;*/
+}
+
+section p {
+    margin-right: 1rem;
+    max-width: 40rem;
+}
+
+section p.wide {
+    max-width: 90rem;
+    margin-right: 0rem;
+}
+
+section p a:hover {
+    animation-name: color;
+    animation-duration: 2s;
+    animation-iteration-count: 1;
+    color: var(--link-hover-color-p-section);;
+}
+
+section li p {
+    margin-left: 1rem;
+}
+
+section .list { /*lijst met items van links naar rechts*/
+    display: flex;
+    flex-wrap: wrap;
+    align-content: space-around;
+}
+
+section .list .list_heading {
+    padding: 1rem;
+}
+
+section .list .list_item {
+    padding: .5rem;
+    margin: .1rem .5rem;
+    background-color: var(--not-yet-started);
+    border-radius: .1rem;
+}
+
+section .list .list_item_color {
+    padding: .5rem;
+    margin: .1rem .5rem;
+    background-color: var(--not-yet-started);
+    border-radius: .1rem;
+}
+
+section .list .redo { /*kleuren voor wat af is*/
+    background-color: var(--redo) !important;
+}
+
+section .list .completed {
+    background-color: var(--complete);
+}
+
+section .list .started {
+    background-color: var(--started);
+}
+
+section .list .started_important {
+    background-color: var(--started) !important;
+}
+
+section .list a {
+    text-decoration: none;
+    color: var(--main-text-color);
+}
+
+section .list a:hover {
+    text-decoration: none;
+    color: var(--main-text-color);
+}
+
+section .button { /*grijze knoppen*/
+    padding: 1rem;
+    background-color: var(--button-color);
+    margin: .5rem;
+    border-radius: .2em;
+    max-width: 22rem;
+    display: block;
+}
+
+section .button:hover {
+    background-color: var(--hover-button-color);
+    animation-name: backgroundbutton;
+    animation-duration: .2s;
+    animation-iteration-count: 1;
+}
+
+section .button .icon {
+    float: left;
+}
+
+section .button .icon img {
+    width: 3rem;
+    margin-top: -.3rem;
+}
+
+@keyframes backgroundbutton { /*effect gekoppeld aan knop*/
+    from {background-color: var(--button-color);}
+    to {background-color: var(--hover-button-color);}
+}
+
+@keyframes color { /*"a" kleur*/
+    from {color: var(--link-color);}
+    to {color: var(--link-hover-color-p-section);}
+}
